@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-white selection:bg-accent/30;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .cell {
+    @apply w-8 h-8 border-r border-b border-border flex items-center justify-center transition-colors;
+  }
+  
+  .cell-active {
+    @apply bg-accent/20 text-accent;
+  }
+
+  .habit-row {
+    @apply flex border-l border-t border-border;
+  }
+
+  .label-cell {
+    @apply w-48 h-8 border-r border-b border-border px-2 flex items-center text-xs font-medium uppercase tracking-wider text-gray-400;
+  }
+
+  .month-sheet-container {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .month-sheet-container:has(.month-sticker:hover) {
+    z-index: 100 !important;
+  }
+
+  .month-tile {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* Стили для кастомного скроллбара */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full hover:bg-gray-600 transition-colors;
+  }
+}
