@@ -25,6 +25,13 @@ function cn(...inputs: ClassValue[]) {
 }
 
 export default function App() {
+  useEffect(() => {
+    if (window.Telegram?.WebApp) {
+      window.Telegram.WebApp.ready();
+      window.Telegram.WebApp.expand();
+    }
+  }, []);
+
   const [currentDate, setCurrentDate] = useState(new Date());
   const [data, setData] = useState<MonthData>(() => {
     const saved = localStorage.getItem('habit-tracker-data');
