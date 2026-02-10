@@ -45,3 +45,4 @@ out/
 # Vite
 *.timestamp-*
 .vite/deps_temp_7575bcc6/package.json
+ngrok.exe
